@@ -1,0 +1,175 @@
+/* KiteBanners v4 - Custom Styles */
+
+:root {
+  --color-navy-900: #0A1E3D;
+  --color-navy-950: #051225;
+  --color-coral-500: #E76F51;
+  --color-sand-100: #F4E8D6;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children for groups */
+.reveal-group > .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-group > .reveal:nth-child(2) { transition-delay: 100ms; }
+.reveal-group > .reveal:nth-child(3) { transition-delay: 200ms; }
+.reveal-group > .reveal:nth-child(4) { transition-delay: 300ms; }
+.reveal-group > .reveal:nth-child(5) { transition-delay: 400ms; }
+.reveal-group > .reveal:nth-child(6) { transition-delay: 500ms; }
+.reveal-group > .reveal:nth-child(7) { transition-delay: 600ms; }
+.reveal-group > .reveal:nth-child(8) { transition-delay: 700ms; }
+
+/* Navigation states */
+#navbar {
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+}
+
+#navbar.scrolled {
+  background-color: rgba(10, 30, 61, 0.98);
+  box-shadow: 0 4px 30px rgba(10, 30, 61, 0.25);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#navbar.scrolled .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#navbar.scrolled .nav-link:hover {
+  color: var(--color-coral-400);
+}
+
+#navbar.scrolled #mobile-menu-btn {
+  color: #fff;
+}
+
+#navbar.scrolled a[href="#contact"] {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+#navbar.scrolled a[href="#contact"]:hover {
+  background-color: #fff;
+  color: var(--color-navy-900);
+}
+
+/* Mobile menu open state */
+#mobile-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* FAQ transitions */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 1.5rem;
+  transition: max-height 0.4s ease, opacity 0.35s ease, padding 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  opacity: 1;
+  padding-bottom: 1.5rem;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Video modal */
+#showreel-modal.open,
+#lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Form focus improvements */
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(231, 111, 81, 0.15);
+}
+
+/* Gallery item focus */
+.gallery-item:focus {
+  outline: 2px solid var(--color-coral-500);
+  outline-offset: 2px;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img[src=""] {
+  opacity: 0;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-coral-500);
+  color: white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-bounce {
+    animation: none;
+  }
+}
+
+/* Hero video fallback for very small screens */
+@media (max-width: 640px) {
+  #hero h1 {
+    font-size: 2.75rem;
+    line-height: 1;
+  }
+}
