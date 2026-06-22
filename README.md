@@ -68,3 +68,4 @@ Then visit `http://localhost:8080`.
 
 - The contact form is currently a frontend mockup. It logs submissions to the browser console and shows a success message. Connect it to a backend or form service (e.g., Formspree, HubSpot, or a custom endpoint) when ready.
 - The hero video is a `.mov` file. Most modern browsers support it if it uses H.264/H.265 encoding. A poster image is provided as fallback.
+# kite-banners
