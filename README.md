@@ -1,4 +1,4 @@
-# KiteBanners v4
+# KiteBanners Redesign
 
 A clean, conversion-optimized one-page website for KiteBanners built with HTML, Tailwind CSS, and vanilla JavaScript.
 
